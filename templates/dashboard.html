@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+
+  <script id="sidebar__header" type="text/template">
+    <p>Hi, {% raw -%}{{ displayName }}{%- endraw %}!</p>
+  </script>
+
+  <script id="message" type="text/template">
+    <div class="message__container">
+      <p>{% raw -%}{{ message.sender }}{%- endraw %}</p>
+      <p>{% raw -%}{{ message.text }}{%- endraw %}</p>
+      <p>{% raw -%}{{ message.time }}{%- endraw %}</p>
+    </div>
+  </script>
+
+  <script type="text/javascript" src="{{url_for('static', filename='dashboard.js')}}"></script>
+
+{% endblock %}
+
+{% block title %}Flack - Dashboard{% endblock %}
+
+{% block body %}
+
+  <div class="container-fluid dashboard__container">
+    <div class="row dashboard__container--row">
+      <div class="col-4 sidebar__container">
+        <div class="sidebar__container--header">
+
+        </div>
+        <div class="channels__container">
+            <h5>Channels</h5>
+            <div class="channel__form--container">
+              <input type="text" name="channelName" value="" class="channel__field--name">
+              <button id="createChannel" type="submit" name="">Submit</button>
+            </div>
+            <ul>
+              {% for channel in channels %}
+                <li><button class="channels__container--item" data-channel="{{ channel }}">{{ channel }}</button></li>
+              {% endfor %}
+            </ul>
+        </div>
+        <button type="button" name="button" class="logout">Logout</button>
+      </div>
+      <div class="col-8 messenger__container">
+        <div class="messenger__container--header">
+          
+        </div>
+        <div class="messenger__container--messages">
+
+        </div>
+        <div class="messenger__container--form flex flex-horizontal">
+          <input class="messenger__form--field" type="text" name="" value="">
+          <button id="sendMessage" type="button" name="button">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

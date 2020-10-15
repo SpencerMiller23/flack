@@ -1,0 +1,105 @@
+/* Color variables */
+$color-body-primary: #FEFFFF;
+$color-body-secondary: #DEF2F1;
+$color-primary: #3AAFA9;
+$color-secondary: #DEF2F1;
+$color-accent: #17252A;
+
+*:focus {
+  outline: none !important;
+}
+
+.flex{
+  display: flex;
+  display: -webkit-flex;
+}
+
+.flex-horizontal {
+  flex-direction: horizontal;
+  -webkit-flex-direction: horizontal;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+/* Text styles */
+.text__color--primary {
+  color: $color-accent;
+}
+.text-center {
+  text-align: center;
+}
+
+/* Input field styles */
+.input__field {
+  border-radius: 15px;
+  background-color: $color-body-primary;
+  color: $color-accent;
+  border: none;
+  margin-right: 15px;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: $color-accent;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+.btn-primary:hover {
+  background-color: $color-primary;
+}
+
+body {
+  background-color: $color-primary;
+}
+
+.login__container, .login__container--row, .dashboard__container, .dashboard__container--row {
+  height: 100vh;
+}
+
+.form__container--inner {
+  background-color: $color-body-secondary;
+  padding: 50px 60px;
+  border-radius: 20px;
+
+  .input__field {
+    font-size: 20px;
+    padding: 8px 15px;
+  }
+
+}
+
+.messenger__container {
+  background-color: $color-body-primary;
+  padding: 0px;
+}
+
+.messenger__container--messages {
+  width: 100%;
+  height: calc(100vh - 100px);
+}
+
+.message__container {
+  border-bottom: 1px solid $color-accent;
+}
+
+.messenger__container--form {
+  width: 100%;
+  height: 100px;
+  background-color: $color-body-secondary;
+  padding: 15px;
+}
+
+.messenger__form--field {
+  height: 100%;
+  width: calc(100% - 100px);
+}
+
+#sendMessage {
+  height: 100%;
+  width: 100px;
+  color: $color-body-primary;
+  background-color: $color-accent;
+}

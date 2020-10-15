@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+
+  <script type="text/javascript" src="{{url_for('static', filename='index.js')}}"></script>
+
+{% endblock %}
+
+{% block title %}Flack - Login{% endblock %}
+
+{% block body %}
+
+  <div class="container login__container">
+    <div class="row login__container--row">
+      <div class="col-sm-0 col-md-2"></div>
+      <div class="col-sm-12 col-md-8 flex">
+        <div class="form__container margin-auto">
+          <h1 class="text-center text__color--primary">FLACK</h1>
+          <br>
+          <div class="form__container--inner">
+            <h4 class="text-center text__color--primary">Enter your display name:</h4>
+            <br>
+            <form class="login__form" action="{{ url_for('dashboard') }}" method="post">
+              <input type="text" name="displayName" value="" class="input__field">
+              <input type="submit" name="login" value="Login" class="btn btn-primary">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-0 col-md-2"></div>
+    </div>
+  </div>
+
+{% endblock %}
